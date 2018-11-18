@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" onKeyPressed="#handleKeyPressed" prefHeight="280.0" prefWidth="195.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculatorresponsive.FXMLDocumentControllerMedium">
+<AnchorPane id="AnchorPane" onKeyPressed="#handleKeyPressed" prefHeight="280.0" prefWidth="195.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculatorresponsive.FXMLCalculatorController">
    <children>
       <GridPane fx:id="btnsGrid" alignment="CENTER" hgap="1.0" minHeight="275.0" minWidth="195.0" vgap="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
