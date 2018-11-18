@@ -15,15 +15,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import sun.audio.AudioPlayer;
-
 
 /**
+ * FXML Controller class
  *
  * @author Konstantinos
  */
-public class FXMLDocumentController implements Initializable {
-    //Controls
+public class FXMLDocumentControllerSmall implements Initializable {
+//Controls
     @FXML
     private TextField display;
     @FXML
@@ -31,7 +30,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button powerBtn;
     
-    private final Calculator calculator = new Calculator();
+    @FXML
+    private void signButtonClicked(ActionEvent e){
+        CalculatorResponsive.CALCULATOR.signNumberButtonPushed();
+        displayText(CalculatorResponsive.CALCULATOR.getText());
+    }
     
     @FXML
     private void powerButtonClicked(ActionEvent e){
@@ -45,44 +48,44 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void resetButtonClicked(ActionEvent e){
-        calculator.reset();
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.reset();
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
     private void equalsButtonClicked(ActionEvent e){
-        calculator.resultButtonPushed();
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.resultButtonPushed();
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
     private void plusButtonClicked(ActionEvent e){
-        calculator.operationButtonPushed(Operation.Addition);
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Addition);
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
     private void numberButtonClicked(ActionEvent e){
-        calculator.pushNumberButton(((Button)e.getSource()).getText());
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.pushNumberButton(((Button)e.getSource()).getText());
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
     private void minusButtonClicked(ActionEvent e){
-        calculator.operationButtonPushed(Operation.Subtraction);
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Subtraction);
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
     private void multiplyButtonClicked(ActionEvent e){
-        calculator.operationButtonPushed(Operation.Multiplication);
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Multiplication);
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
     private void divideButtonClicked(ActionEvent e){
-        calculator.operationButtonPushed(Operation.Division);
-        displayText(calculator.getText());
+        CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Division);
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
     @FXML
@@ -90,68 +93,68 @@ public class FXMLDocumentController implements Initializable {
         switch(e.getCode()){
             case NUMPAD0:
             case DIGIT0:
-                calculator.pushNumberButton("0");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("0");
                 break;
             case NUMPAD1:
             case DIGIT1:
-                calculator.pushNumberButton("1");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("1");
                 break;
             case NUMPAD2:
             case DIGIT2:
-                calculator.pushNumberButton("2");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("2");
                 break;
             case NUMPAD3:
             case DIGIT3:
-                calculator.pushNumberButton("3");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("3");
                 break;
             case NUMPAD4:
             case DIGIT4:
-                calculator.pushNumberButton("4");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("4");
                 break;
             case NUMPAD5:
             case DIGIT5:
-                calculator.pushNumberButton("5");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("5");
                 break;
             case NUMPAD6:
             case DIGIT6:
-                calculator.pushNumberButton("6");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("6");
                 break;
             case NUMPAD7:
             case DIGIT7:
-                calculator.pushNumberButton("7");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("7");
                 break;
             case NUMPAD8:
             case DIGIT8:
-                calculator.pushNumberButton("8");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("8");
                 break;
             case NUMPAD9:
             case DIGIT9:
-                calculator.pushNumberButton("9");
+                CalculatorResponsive.CALCULATOR.pushNumberButton("9");
                 break;
             case DIVIDE:
             case SLASH:
-                calculator.operationButtonPushed(Operation.Division);
+                CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Division);
                 break;
             case MULTIPLY:
             case STAR:
-                calculator.operationButtonPushed(Operation.Multiplication);
+                CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Multiplication);
                 break;
             case ADD:
             case PLUS:
-                calculator.operationButtonPushed(Operation.Addition);
+                CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Addition);
                 break;
             case SUBTRACT:
             case MINUS:
-                calculator.operationButtonPushed(Operation.Subtraction);
+                CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Subtraction);
                 break;
             case PERIOD:
             case DECIMAL:
-                calculator.pushNumberButton(".");
+                CalculatorResponsive.CALCULATOR.pushNumberButton(".");
                 break;
             default:
                 break;
         }
-        displayText(calculator.getText());
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
    
@@ -165,9 +168,13 @@ public class FXMLDocumentController implements Initializable {
         display.setText(text);
     }
     
+    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        displayText(CalculatorResponsive.CALCULATOR.getText());
     }    
     
 }

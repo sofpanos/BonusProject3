@@ -21,6 +21,15 @@ public class Calculator {
         
     }
     
+    public void signNumberButtonPushed(){
+        if(displayText.startsWith("-")){
+            displayText = displayText.substring(1);
+        }
+        else{
+            displayText = "-" + displayText;
+        }
+    }
+    
     public void pushNumberButton(String buttonText){
         if(result){
             displayText = "";
@@ -50,6 +59,10 @@ public class Calculator {
         }
         else if(currentOperation != null){
             doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
+        }
+        else if(op == Operation.Log || op == Operation.SqrRoot || op == Operation.Sin 
+                || op == Operation.Cosin || op == Operation.Tan){
+            doOperation(Double.parseDouble(displayText), op, currentAmount);
         }
         else{
             previousAmount = Double.parseDouble(displayText);
