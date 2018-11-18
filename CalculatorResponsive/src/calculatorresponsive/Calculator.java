@@ -132,11 +132,9 @@ public class Calculator {
     }
     
     private void showPretty(){
-        if(displayText.length() != 0 && !displayText.endsWith(".")){
+        if(displayText.length() != 0 && !displayText.contains(".")){
             double amount = Double.parseDouble(displayText);
-            if((amount * 10) % 10 == 0){
-                displayText = ((int)amount) + "";
-            }
+            displayText = ((long)amount) + "";
         }
     }
     

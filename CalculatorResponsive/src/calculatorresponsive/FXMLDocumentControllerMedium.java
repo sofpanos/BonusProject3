@@ -154,6 +154,7 @@ public class FXMLDocumentControllerMedium implements Initializable {
             default:
                 break;
         }
+        
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
@@ -170,7 +171,7 @@ public class FXMLDocumentControllerMedium implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.displayText(CalculatorResponsive.CALCULATOR.getText());
+        
     }    
     
 }

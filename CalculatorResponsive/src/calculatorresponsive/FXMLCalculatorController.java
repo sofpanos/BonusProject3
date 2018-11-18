@@ -7,6 +7,8 @@ package calculatorresponsive;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,14 +23,13 @@ import javafx.scene.layout.GridPane;
  *
  * @author Konstantinos
  */
-public class FXMLDocumentControllerLarge implements Initializable {
+public class FXMLCalculatorController implements Initializable {
 @FXML
     private TextField display;
     @FXML
     private GridPane btnsGrid;
     @FXML
     private Button powerBtn;
-    
     
     @FXML
     private void signButtonClicked(ActionEvent e){
@@ -184,11 +185,12 @@ public class FXMLDocumentControllerLarge implements Initializable {
             default:
                 break;
         }
+        
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
     
    
-    private void displayText(String text){
+    public void displayText(String text){
         if(text.length() > 15){
             display.setAlignment(Pos.CENTER_LEFT);
         }
@@ -200,6 +202,6 @@ public class FXMLDocumentControllerLarge implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.displayText(CalculatorResponsive.CALCULATOR.getText());
+        
     }   
 }

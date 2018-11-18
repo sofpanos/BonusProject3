@@ -9,8 +9,9 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -25,9 +26,9 @@ public class CalculatorResponsive extends Application {
     
     public static final Calculator CALCULATOR = new Calculator();
     
-    private static Scene LargeScene;
-    private static Scene MediumScene;
-    private static Scene SmallScene;
+    public static Scene LargeScene;
+    public static Scene MediumScene;
+    public static Scene SmallScene;
 
     
     @Override
@@ -35,6 +36,8 @@ public class CalculatorResponsive extends Application {
         MediumScene = new Scene(FXMLLoader.load(getClass().getResource("FXMLDocumentMedium.fxml")));
         LargeScene = new Scene(FXMLLoader.load(getClass().getResource("FXMLDocumentLarge.fxml")));
         SmallScene = new Scene(FXMLLoader.load(getClass().getResource("FXMLDocumentSmall.fxml")));
+        
+        
         
         Scene scene = MediumScene;
         stage.widthProperty().addListener(new ChangeListener(){
@@ -62,9 +65,26 @@ public class CalculatorResponsive extends Application {
                 stage.show();
             }
         });
+        stage.sceneProperty().addListener(new ChangeListener(){
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                TextField display = (TextField)((Scene)newValue).lookup("#display");
+                CalculatorResponsive.displayText(display, CalculatorResponsive.CALCULATOR.getText());
+            }
         
+        });
         stage.setScene(scene);
         stage.show();
+    }
+    
+    private static void displayText(TextField display, String text){
+        if(text.length() > 15){
+            display.setAlignment(Pos.CENTER_LEFT);
+        }
+        else{
+            display.setAlignment(Pos.CENTER_RIGHT);
+        }
+        display.setText(text);
     }
 
     
