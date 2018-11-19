@@ -20,9 +20,9 @@ import javafx.stage.Stage;
  */
 public class CalculatorResponsive extends Application {
     
-    private static final Number MEDIUM_WIDTH = 195;
+    private static final Number MEDIUM_WIDTH = 182;
     
-    private static final Number LARGE_WIDTH = 255;
+    private static final Number LARGE_WIDTH = 261;
     
     public static final Calculator CALCULATOR = new Calculator();
     

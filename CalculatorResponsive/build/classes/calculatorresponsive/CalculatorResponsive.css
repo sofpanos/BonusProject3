@@ -1,0 +1,141 @@
+GridPane
+{
+    -fx-hgap: 2px;
+    -fx-vgap: 2px;
+}
+
+#powerBtn,#resetBtn
+{
+    -fx-text-fill: #ff0101;
+}
+
+Button
+{
+    -fx-text-alignment: center;
+}
+
+/* Large Layout */
+
+.grid_large
+{
+    -fx-min-width: 257px;
+    -fx-min-height: 284px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+}
+
+.display_large
+{
+    -fx-min-width: 253px;
+    -fx-min-height: 45px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 16px "Arial Black";
+}
+
+/*Buttons Layout */
+
+.button_normal_large
+{
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 16px "Arial Black";
+}
+
+.button_scientific
+{
+    -fx-min-height: 45px;
+    -fx-min-width: 65px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 14px "Arial Black";
+}
+
+.button_power_large
+{
+    -fx-min-width: 92px;
+    -fx-min-height: 45px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 18px "Arial Black";
+    
+}
+
+/* Medium Layout */
+
+.display_medium
+{
+    -fx-min-width: 178px;
+    -fx-min-height: 43px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+}
+
+.grid_medium
+{
+    -fx-min-width: 178px;
+    -fx-min-height: 272px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+}
+
+/* Buttons Layout */
+
+.button_normal_medium
+{
+    -fx-min-width:43px;
+    -fx-min-height: 43px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 14px "Arial Black";
+}
+
+.button_power_medium
+{
+    -fx-min-width: 86px;
+    -fx-min-height: 43px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 16px "Arial Black";
+}
+
+/* Small Layout */
+
+.grid_small
+{
+    -fx-min-width: 126px;
+    -fx-min-height: 98px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+}
+
+.display_small
+{
+    -fx-min-width: 124px;
+    -fx-min-height: 30px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 12px "Arial";
+}
+
+/* Button Layout */
+
+.button_normal_small
+{
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 12px "Arial Black";
+}
+
+.button_power_small
+{
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font: 12px "Arial Black";
+}
