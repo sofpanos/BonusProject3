@@ -28,6 +28,7 @@ public class Calculator {
         else{
             displayText = "-" + displayText;
         }
+        showPretty();
     }
     
     public void pushNumberButton(String buttonText){
@@ -58,7 +59,13 @@ public class Calculator {
             doOperation(Double.parseDouble(displayText), op, currentAmount);
         }
         else if(currentOperation != null){
-            doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
+            if(displayText.length() != 0){
+                doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
+            }
+            else{
+                doOperation(previousAmount, currentOperation, previousAmount);
+            }
+            currentOperation = op;
         }
         else if(op == Operation.Log || op == Operation.SqrRoot || op == Operation.Sin 
                 || op == Operation.Cosin || op == Operation.Tan){
@@ -69,7 +76,7 @@ public class Calculator {
             displayText = "";
             currentOperation = op;
         }
-        
+        showPretty();
     }
     
     public void resultButtonPushed(){
@@ -84,10 +91,11 @@ public class Calculator {
                 doOperation(previousAmount, currentOperation, previousAmount);
             }
         }
+        showPretty();
     }
     
     public String getText(){
-        showPretty();
+        
         return displayText;
     }
     
@@ -132,14 +140,14 @@ public class Calculator {
     }
     
     private void showPretty(){
-        if(displayText.length() != 0 && !displayText.contains(".")){
+        if(displayText.length() != 0 && displayText.endsWith(".0")){
             double amount = Double.parseDouble(displayText);
             displayText = ((long)amount) + "";
         }
     }
     
     public void reset(){
-        displayText = "";
+        displayText = "0";
         currentAmount = 0;
         currentOperation = null;
         previousAmount = 0;

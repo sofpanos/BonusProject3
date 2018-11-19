@@ -30,6 +30,7 @@ Button
     -fx-min-height: 45px;
     -fx-max-width: "Infinity";
     -fx-max-height: "Infinity";
+    -fx-editable: "false";
     -fx-font: 16px "Arial Black";
 }
 
@@ -71,6 +72,8 @@ Button
     -fx-min-height: 43px;
     -fx-max-width: "Infinity";
     -fx-max-height: "Infinity";
+    -fx-font: 16px "Arial Black";
+    -fx-editable: "false";
 }
 
 .grid_medium
@@ -118,6 +121,7 @@ Button
     -fx-max-width: "Infinity";
     -fx-max-height: "Infinity";
     -fx-font: 12px "Arial";
+    -fx-editable: "false";
 }
 
 /* Button Layout */
