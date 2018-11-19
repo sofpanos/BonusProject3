@@ -58,22 +58,18 @@ public class Calculator {
         if(result){
             doOperation(Double.parseDouble(displayText), op, currentAmount);
         }
-        else if(currentOperation != null){
-            if(displayText.length() != 0){
-                doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
-            }
-            else{
-                doOperation(previousAmount, currentOperation, previousAmount);
-            }
-            currentOperation = op;
-        }
-        else if(op == Operation.Log || op == Operation.SqrRoot || op == Operation.Sin 
-                || op == Operation.Cosin || op == Operation.Tan){
-            doOperation(Double.parseDouble(displayText), op, currentAmount);
-        }
-        else{
+        else if(currentOperation == null){
             previousAmount = Double.parseDouble(displayText);
             displayText = "";
+            currentOperation = op;
+        }
+        else if(currentOperation != null){
+            if(displayText.length() == 0){
+                doOperation(previousAmount, currentOperation, previousAmount);
+            }
+            else{
+                doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
+            }
             currentOperation = op;
         }
         showPretty();
