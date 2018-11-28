@@ -9,6 +9,12 @@ GridPane
     -fx-text-fill: #ff0101;
 }
 
+TextField, GridPane, Button
+{
+    -fx-max-width: "Infinity";
+    -fx-max-height: "Infinity";
+    -fx-font:12px "Arial Black";
+}
 Button
 {
     -fx-text-alignment: center;
@@ -20,18 +26,13 @@ Button
 {
     -fx-min-width: 257px;
     -fx-min-height: 284px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
 }
 
 .display_large
 {
     -fx-min-width: 253px;
     -fx-min-height: 45px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-editable: "false";
-    -fx-font: 16px "Arial Black";
+    -fx-font-size: 16px;
 }
 
 /*Buttons Layout */
@@ -40,28 +41,21 @@ Button
 {
     -fx-min-width: 45px;
     -fx-min-height: 45px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 16px "Arial Black";
+    -fx-font-size: 16px;
 }
 
 .button_scientific
 {
     -fx-min-height: 45px;
     -fx-min-width: 65px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 14px "Arial Black";
+    -fx-font-size: 14px;
 }
 
 .button_power_large
 {
     -fx-min-width: 92px;
     -fx-min-height: 45px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 18px "Arial Black";
-    
+    -fx-font-size: 18px;
 }
 
 /* Medium Layout */
@@ -70,18 +64,13 @@ Button
 {
     -fx-min-width: 178px;
     -fx-min-height: 43px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 16px "Arial Black";
-    -fx-editable: "false";
+    -fx-font-size: 16px;
 }
 
 .grid_medium
 {
     -fx-min-width: 178px;
     -fx-min-height: 272px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
 }
 
 /* Buttons Layout */
@@ -90,18 +79,14 @@ Button
 {
     -fx-min-width:43px;
     -fx-min-height: 43px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 14px "Arial Black";
+    -fx-font-size: 14px;
 }
 
 .button_power_medium
 {
     -fx-min-width: 86px;
     -fx-min-height: 43px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 16px "Arial Black";
+    -fx-font-size: 16px;
 }
 
 /* Small Layout */
@@ -110,18 +95,13 @@ Button
 {
     -fx-min-width: 126px;
     -fx-min-height: 98px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
 }
 
 .display_small
 {
     -fx-min-width: 124px;
     -fx-min-height: 30px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
     -fx-font: 12px "Arial";
-    -fx-editable: "false";
 }
 
 /* Button Layout */
@@ -130,16 +110,10 @@ Button
 {
     -fx-min-width: 32px;
     -fx-min-height: 32px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 12px "Arial Black";
 }
 
 .button_power_small
 {
     -fx-min-width: 32px;
     -fx-min-height: 32px;
-    -fx-max-width: "Infinity";
-    -fx-max-height: "Infinity";
-    -fx-font: 12px "Arial Black";
 }
