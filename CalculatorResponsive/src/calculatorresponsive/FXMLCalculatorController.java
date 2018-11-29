@@ -22,104 +22,105 @@ import javafx.scene.layout.GridPane;
  * @author Konstantinos
  */
 public class FXMLCalculatorController implements Initializable {
-@FXML
+
+    @FXML
     private TextField display;
     @FXML
     private GridPane btnsGrid;
     @FXML
     private Button powerBtn;
-    
+
     @FXML
-    private void signButtonClicked(ActionEvent e){
+    private void signButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.signNumberButtonPushed();
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void sqrtButtonClicked(ActionEvent e){
+    private void sqrtButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.SqrRoot);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void sinButtonClicked(ActionEvent e){
+    private void sinButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Sin);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void cosinButtonClicked(ActionEvent e){
+    private void cosinButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Cosin);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void tanButtonClicked(ActionEvent e){
+    private void tanButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Tan);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void logButtonClicked(ActionEvent e){
+    private void logButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Log);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void powerButtonClicked(ActionEvent e){
-        btnsGrid.getChildren().forEach((node) ->{
-            if(!node.getId().equals(powerBtn.getId())){
+    private void powerButtonClicked(ActionEvent e) {
+        btnsGrid.getChildren().forEach((node) -> {
+            if (!node.getId().equals(powerBtn.getId())) {
                 node.setDisable(!node.disableProperty().get());
             }
         });
         resetButtonClicked(e);
     }
-    
+
     @FXML
-    private void resetButtonClicked(ActionEvent e){
+    private void resetButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.reset();
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void equalsButtonClicked(ActionEvent e){
+    private void equalsButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.resultButtonPushed();
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void plusButtonClicked(ActionEvent e){
+    private void plusButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Addition);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void numberButtonClicked(ActionEvent e){
-        CalculatorResponsive.CALCULATOR.pushNumberButton(((Button)e.getSource()).getText());
+    private void numberButtonClicked(ActionEvent e) {
+        CalculatorResponsive.CALCULATOR.pushNumberButton(((Button) e.getSource()).getText());
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void minusButtonClicked(ActionEvent e){
+    private void minusButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Subtraction);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void multiplyButtonClicked(ActionEvent e){
+    private void multiplyButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Multiplication);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void divideButtonClicked(ActionEvent e){
+    private void divideButtonClicked(ActionEvent e) {
         CalculatorResponsive.CALCULATOR.operationButtonPushed(Operation.Division);
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
+
     @FXML
-    private void handleKeyPressed(KeyEvent e){
-        switch(e.getCode()){
+    private void handleKeyPressed(KeyEvent e) {
+        switch (e.getCode()) {
             case NUMPAD0:
             case DIGIT0:
                 CalculatorResponsive.CALCULATOR.pushNumberButton("0");
@@ -183,23 +184,21 @@ public class FXMLCalculatorController implements Initializable {
             default:
                 break;
         }
-        
+
         displayText(CalculatorResponsive.CALCULATOR.getText());
     }
-    
-   
-    public void displayText(String text){
-        if(text.length() > 15){
+
+    public void displayText(String text) {
+        if (text.length() > 15) {
             display.setAlignment(Pos.CENTER_LEFT);
-        }
-        else{
+        } else {
             display.setAlignment(Pos.CENTER_RIGHT);
         }
         display.setText(text);
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }   
+
+    }
 }

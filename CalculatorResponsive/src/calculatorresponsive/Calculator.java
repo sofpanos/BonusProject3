@@ -10,96 +10,87 @@ package calculatorresponsive;
  * @author Konstantinos
  */
 public class Calculator {
+
     private String displayText = "0";
     private double previousAmount = 0;
     private double currentAmount = 0;
     private Operation currentOperation = null;
     private boolean result = false;
-    
-    
-    public Calculator(){
-        
+
+    public Calculator() {
+
     }
-    
-    public void signNumberButtonPushed(){
-        if(displayText.startsWith("-")){
+
+    public void signNumberButtonPushed() {
+        if (displayText.startsWith("-")) {
             displayText = displayText.substring(1);
-        }
-        else{
+        } else {
             displayText = "-" + displayText;
         }
         showPretty();
     }
-    
-    public void pushNumberButton(String buttonText){
-        if(result){
+
+    public void pushNumberButton(String buttonText) {
+        if (result) {
             displayText = "";
             result = false;
         }
-        if(buttonText.equals(".")){
-            if(!displayText.contains(".")){
-                if(displayText.length() == 0 || displayText.equals("0")){
+        if (buttonText.equals(".")) {
+            if (!displayText.contains(".")) {
+                if (displayText.length() == 0 || displayText.equals("0")) {
                     displayText = "0.";
-                }
-                else{
+                } else {
                     displayText += ".";
                 }
             }
-        }
-        else if(displayText.equals("0")){
+        } else if (displayText.equals("0")) {
             displayText = buttonText;
-        }
-        else{
+        } else {
             displayText += buttonText;
         }
     }
-    
-    public void operationButtonPushed(Operation op){
-        if(result){
+
+    public void operationButtonPushed(Operation op) {
+        if (result) {
             doOperation(Double.parseDouble(displayText), op, currentAmount);
-        }
-        else if(currentOperation == null){
+        } else if (currentOperation == null) {
             previousAmount = Double.parseDouble(displayText);
             displayText = "";
             currentOperation = op;
-        }
-        else if(currentOperation != null){
-            if(displayText.length() == 0){
+        } else if (currentOperation != null) {
+            if (displayText.length() == 0) {
                 doOperation(previousAmount, currentOperation, previousAmount);
-            }
-            else{
+            } else {
                 doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
             }
             currentOperation = op;
         }
         showPretty();
     }
-    
-    public void resultButtonPushed(){
-        if(result){
+
+    public void resultButtonPushed() {
+        if (result) {
             doOperation(Double.parseDouble(displayText), currentOperation, currentAmount);
-        }
-        else{
-            if(displayText.length() != 0){
+        } else {
+            if (displayText.length() != 0) {
                 doOperation(previousAmount, currentOperation, Double.parseDouble(displayText));
-            }
-            else{
+            } else {
                 doOperation(previousAmount, currentOperation, previousAmount);
             }
         }
         showPretty();
     }
-    
-    public String getText(){
-        
+
+    public String getText() {
+
         return displayText;
     }
-    
-    private void doOperation(double amount1, Operation operation, double amount2){
-        if(operation == null){
+
+    private void doOperation(double amount1, Operation operation, double amount2) {
+        if (operation == null) {
             return;
         }
-        switch(operation){
+        switch (operation) {
             case Addition:
                 displayText = (amount1 + amount2) + "";
                 currentAmount = amount2;
@@ -134,15 +125,15 @@ public class Calculator {
         currentOperation = operation;
         result = true;
     }
-    
-    private void showPretty(){
-        if(displayText.length() != 0 && displayText.endsWith(".0")){
+
+    private void showPretty() {
+        if (displayText.length() != 0 && displayText.endsWith(".0")) {
             double amount = Double.parseDouble(displayText);
-            displayText = ((long)amount) + "";
+            displayText = ((long) amount) + "";
         }
     }
-    
-    public void reset(){
+
+    public void reset() {
         displayText = "0";
         currentAmount = 0;
         currentOperation = null;
