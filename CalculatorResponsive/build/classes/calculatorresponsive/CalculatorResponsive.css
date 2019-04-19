@@ -110,12 +110,10 @@ Button
 {
     -fx-min-width: 32px;
     -fx-min-height: 32px;
-    -fx-font-size: 12px;
 }
 
 .button_power_small
 {
     -fx-min-width: 32px;
     -fx-min-height: 32px;
-    -fx-font-size: 12px;
 }

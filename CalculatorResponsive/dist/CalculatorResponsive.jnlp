@@ -8,11 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CalculatorResponsive.jar" size="15756" download="eager" />
+    <jar href="CalculatorResponsive.jar" size="15753" download="eager" />
   </resources>
-  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CalculatorResponsive" >
-    <param name="requiredFXVersion" value="8.0+"/>
-  </applet-desc>
   <jfx:javafx-desc  width="800" height="600" main-class="calculatorresponsive.CalculatorResponsive"  name="CalculatorResponsive" />
   <update check="always"/>
 </jnlp>
